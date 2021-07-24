@@ -6,6 +6,8 @@ import { Link } from 'react-router-dom'
 
 import axios from 'axios'
 
+import '../styles/home.scss'
+
 const HomePage: React.FC<IPage & RouteComponentProps<any>> = props => {
   const [heroData, setHeroData] = useState([] as any[])
 
@@ -25,14 +27,18 @@ const HomePage: React.FC<IPage & RouteComponentProps<any>> = props => {
   }
 
   return (
-    <div>
-      <h2>Welcome!</h2>
+    <div className="homeContainer">
       {heroData.map(hero => {
         return (
-          <Link key={hero.id} to={`/${hero.id}`}>
-            <div style={{ border: '1px solid red', margin: '5px' }}>
-              <h3>{hero.name}</h3>
-              <h4>{hero.work.occupation}</h4>
+          <Link className="heroLink" key={hero.id} to={`/${hero.id}`}>
+            <div className="box">
+              <div className="boxImg">
+                <img src={hero.images.sm} alt="hero" />
+              </div>
+              <div className="boxName">
+                <h3>{hero.name}</h3>
+                <h4>{hero.work.occupation}</h4>
+              </div>
             </div>
           </Link>
         )

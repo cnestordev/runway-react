@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400&display=swap');
+
+.link {
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: white;
+  position: fixed;
+  top: 1rem;
+  left: 5rem;
+}
+
+.box {
+  color: rgb(223, 223, 223);
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 0 auto;
+
+  h3 {
+    font-size: 2.6rem;
+    font-weight: bold;
+    margin: 0.7rem 0;
+  }
+
+  p {
+    margin: 0.5rem 0;
+    color: rgb(223, 223, 223);
+
+    span {
+      color: rgb(223, 179, 179);
+      font-weight: bolder;
+    }
+  }
+
+  .intro {
+    display: flex;
+
+    div.heroImg {
+      width: 30%;
+    }
+
+    img {
+      width: 100%;
+    }
+
+    div.nameDetails {
+      width: 100%;
+      text-align: center;
+
+      h2.name {
+        font-size: 3rem;
+      }
+
+      h2.bio {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  .appearance {
+    h3 {
+      color: rgb(151, 47, 255);
+    }
+  }
+
+  .biography {
+    h3 {
+      color: rgb(9, 52, 196);
+    }
+  }
+
+  .connections {
+    h3 {
+      color: rgb(255, 49, 152);
+    }
+  }
+
+  .powerstats {
+    h3 {
+      color: rgb(2, 216, 127);
+    }
+  }
+
+  .work {
+    h3 {
+      color: rgb(255, 148, 8);
+    }
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #121212;
+  font-family: 'Rubik';
+}

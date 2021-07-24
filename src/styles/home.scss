@@ -1,0 +1,26 @@
+div.homeContainer {
+  display: flex;
+  flex-direction: column;
+
+  .heroLink {
+    color: rgb(177, 177, 177);
+    text-decoration: none;
+    margin: 0.5rem 0;
+  }
+
+  .box {
+    border: 2px solid rgb(126, 126, 126);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    padding: 0.5rem;
+
+    div.boxImg {
+      width: 25%;
+    }
+
+    div.boxName {
+      width: 75%;
+    }
+  }
+}

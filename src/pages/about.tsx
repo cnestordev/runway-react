@@ -3,6 +3,8 @@ import { Link, RouteComponentProps, withRouter } from 'react-router-dom'
 import IPage from '../interfaces/page'
 import { hero } from '../interfaces/hero'
 
+import '../styles/about.scss'
+
 import axios from 'axios'
 
 const AboutPage: React.FC<IPage & RouteComponentProps<any>> = props => {
@@ -28,43 +30,99 @@ const AboutPage: React.FC<IPage & RouteComponentProps<any>> = props => {
 
   return (
     <div className="container">
-      <Link to="/">Home</Link>
+      <Link className="link" to="/">
+        {'< Back'}
+      </Link>
       <div className="box">
         <div className="intro">
-          <h2>{data.name}</h2>
-          <h2>{data.biography.fullName}</h2>
+          <div className="heroImg">
+            <img src={data.images.sm} alt="hero" />
+          </div>
+          <div className="nameDetails">
+            <h2 className="name">{data.name}</h2>
+            <h2 className="bio">{data.biography.fullName}</h2>
+          </div>
         </div>
         <div className="appearance heroProp">
-          <p>Eye color: {data.appearance.eyeColor}</p>
-          <p>gender: {data.appearance.gender}</p>
-          <p>Hair color: {data.appearance.hairColor}</p>
-          <p>Height: {data.appearance.height}</p>
-          <p>Race: {data.appearance.race}</p>
-          <p>Weight: {data.appearance.weight}</p>
+          <h3>APPEARANCE</h3>
+          <p>
+            <span>Eye color:</span> {data.appearance.eyeColor}
+          </p>
+          <p>
+            <span>gender:</span> {data.appearance.gender}
+          </p>
+          <p>
+            <span>Hair color:</span> {data.appearance.hairColor}
+          </p>
+          <p>
+            <span>Height:</span> {data.appearance.height}
+          </p>
+          <p>
+            <span>Race:</span> {data.appearance.race}
+          </p>
+          <p>
+            <span>Weight:</span> {data.appearance.weight}
+          </p>
         </div>
         <div className="biography heroProp">
-          <p>Aliases: {data.biography.aliases}</p>
-          <p>Alignment: {data.biography.alignment}</p>
-          <p>Alter ego: {data.biography.alterEgos}</p>
-          <p>First appearance: {data.biography.firstAppearance}</p>
-          <p>Full name: {data.biography.fullName}</p>
-          <p>Place of birth: {data.biography.placeOfBirth}</p>
-          <p>Publisher: {data.biography.publisher}</p>
+          <h3>BIOGRAPHY</h3>
+          <p>
+            <span>Aliases:</span> {data.biography.aliases}
+          </p>
+          <p>
+            <span>Alignment:</span> {data.biography.alignment}
+          </p>
+          <p>
+            <span>Alter ego:</span> {data.biography.alterEgos}
+          </p>
+          <p>
+            <span>First appearance:</span> {data.biography.firstAppearance}
+          </p>
+          <p>
+            <span>Full name:</span> {data.biography.fullName}
+          </p>
+          <p>
+            <span>Place of birth:</span> {data.biography.placeOfBirth}
+          </p>
+          <p>
+            <span>Publisher:</span> {data.biography.publisher}
+          </p>
         </div>
         <div className="connections heroProp">
-          <p>Group affiliation: {data.connections.groupAffiliation}</p>
-          <p>Relatives: {data.connections.relatives}</p>
+          <h3>CONNECTIONS</h3>
+          <p>
+            <span>Group affiliation:</span> {data.connections.groupAffiliation}
+          </p>
+          <p>
+            <span>Relatives:</span> {data.connections.relatives}
+          </p>
         </div>
         <div className="powerstats heroProp">
-          <p>Combat: {data.powerstats.combat}</p>
-          <p>Durability: {data.powerstats.durability}</p>
-          <p>Intelligence: {data.powerstats.intelligence}</p>
-          <p>Power: {data.powerstats.power}</p>
-          <p>Speed: {data.powerstats.speed}</p>
-          <p>Strength: {data.powerstats.strength}</p>
+          <h3>POWER STATS</h3>
+          <p>
+            <span>Combat:</span> {data.powerstats.combat}
+          </p>
+          <p>
+            <span>Durability:</span> {data.powerstats.durability}
+          </p>
+          <p>
+            <span>Intelligence:</span> {data.powerstats.intelligence}
+          </p>
+          <p>
+            <span>Power:</span> {data.powerstats.power}
+          </p>
+          <p>
+            <span>Speed:</span> {data.powerstats.speed}
+          </p>
+          <p>
+            <span>Strength:</span> {data.powerstats.strength}
+          </p>
         </div>
         <div className="work heroProp">
-          <p>Occupation: {data.work.occupation}</p>
+          <h3>WORK</h3>
+          <p>
+            <span>Occupation:</span> {data.work.occupation}
+          </p>
         </div>
       </div>
     </div>
