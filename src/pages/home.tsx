@@ -11,21 +11,23 @@ import '../styles/home.scss'
 const HomePage: React.FC<IPage & RouteComponentProps<any>> = props => {
   const [heroData, setHeroData] = useState([] as any[])
 
+  // Fetch data fro API when component first mounts
   useEffect(() => {
     const fetcher = async () => {
       const data = await axios.get(
         'https://akabab.github.io/superhero-api/api/all.json'
       )
-      console.log(data.data)
       setHeroData(data.data)
     }
     fetcher()
   }, [])
 
+  // If state array is empty, render loading text
   if (!heroData.length) {
     return <h1>Loading...</h1>
   }
 
+  // Render once state array has been populated
   return (
     <div className="homeContainer">
       {heroData.map(hero => {

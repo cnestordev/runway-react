@@ -1,3 +1,5 @@
+// data types
+
 export const hero = {
   id: Number,
   name: '',

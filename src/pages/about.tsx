@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { Link, RouteComponentProps, withRouter } from 'react-router-dom'
+import axios from 'axios'
+
 import IPage from '../interfaces/page'
 import { hero } from '../interfaces/hero'
 
 import '../styles/about.scss'
-
-import axios from 'axios'
 
 const AboutPage: React.FC<IPage & RouteComponentProps<any>> = props => {
   const [data, setData] = useState(hero)
@@ -13,21 +13,23 @@ const AboutPage: React.FC<IPage & RouteComponentProps<any>> = props => {
   useEffect(() => {
     let number = props.match.params.number
 
+    // fetch data from API using the number from the params
     const fetcher = async () => {
       const data = await axios.get(
         `https://akabab.github.io/superhero-api/api/id/${number}.json`
       )
-      console.log(data.data)
       setData(data.data)
     }
 
     fetcher()
   }, [])
 
+  // If state contains empty object, render loading
   if (!Object.keys(data).length) {
     return <h2>Loading...</h2>
   }
 
+  // Will load when state is populated with an object
   return (
     <div className="container">
       <Link className="link" to="/">
