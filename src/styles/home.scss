@@ -1,12 +1,12 @@
 div.homeContainer {
-  display: flex;
   flex-direction: column;
+  display: flex;
 
   .heroLink {
     color: rgb(177, 177, 177);
-    text-decoration: none;
     margin: 0.5em 0;
     padding: 0 24%;
+    text-decoration: none;
 
     @media (max-width: 768px) {
       padding: 0 15%;
@@ -27,14 +27,13 @@ div.homeContainer {
     width: 100%;
 
     div.boxImg {
-      width: 15%;
-      display: flex;
-      justify-content: center;
       align-items: center;
       background-image: url(https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/sm/2-abe-sapien.jpg);
-      background-size: cover;
-      background-repeat: no-repeat;
       background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
       width: 25%;
 
       img {
@@ -43,8 +42,8 @@ div.homeContainer {
     }
 
     div.boxName {
-      width: 70%;
       text-align: center;
+      width: 70%;
 
       h3.listName {
         font-size: 2.1em;
