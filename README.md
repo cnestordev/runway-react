@@ -22,7 +22,7 @@ This app utilized **state hooks** for statement management.
 
 ## Components
 
-### App.js
+### App.tsx
 
 The stateless parent component, with two children components. It is used for creating react routes for the two children components.
 
