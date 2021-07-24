@@ -35,11 +35,12 @@ const AboutPage: React.FC<IPage & RouteComponentProps<any>> = props => {
       <Link className="link" to="/">
         {'< Back'}
       </Link>
-      <div className="box">
+      <div className="boxDetails">
         <div className="intro">
-          <div className="heroImg">
-            <img src={data.images.sm} alt="hero" />
-          </div>
+          <div
+            style={{ backgroundImage: `url(${data.images.sm})` }}
+            className="heroImg"
+          ></div>
           <div className="nameDetails">
             <h2 className="name">{data.name}</h2>
             <h2 className="bio">{data.biography.fullName}</h2>

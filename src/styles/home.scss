@@ -5,22 +5,73 @@ div.homeContainer {
   .heroLink {
     color: rgb(177, 177, 177);
     text-decoration: none;
-    margin: 0.5rem 0;
+    margin: 0.5em 0;
+    padding: 0 24%;
+
+    @media (max-width: 768px) {
+      padding: 0 15%;
+    }
+
+    @media (max-width: 380px) {
+      padding: 0 8%;
+    }
   }
 
   .box {
     border: 1px solid rgb(126, 126, 126);
     border-radius: 5px;
+    box-sizing: border-box;
     display: flex;
     flex-direction: row;
-    padding: 0.5rem;
+    padding: 0.5em;
+    width: 100%;
 
     div.boxImg {
+      width: 15%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-image: url(https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/sm/2-abe-sapien.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
       width: 25%;
+
+      img {
+        width: 100%;
+      }
     }
 
     div.boxName {
-      width: 75%;
+      width: 70%;
+      text-align: center;
+
+      h3.listName {
+        font-size: 2.1em;
+      }
+
+      h4.listName {
+        font-size: 1em;
+        margin: 1em;
+      }
+
+      p {
+        margin-top: 2.5em;
+      }
+
+      @media (max-width: 768px) {
+        h3.listName {
+          font-size: 1.6rem;
+        }
+
+        h4.listName {
+          font-size: 0.8em;
+        }
+
+        p {
+          font-size: 0.9em;
+        }
+      }
     }
   }
 }

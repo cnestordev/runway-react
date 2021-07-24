@@ -9,6 +9,7 @@ import axios from 'axios'
 import '../styles/home.scss'
 
 const HomePage: React.FC<IPage & RouteComponentProps<any>> = props => {
+  // state for ALL data from API
   const [heroData, setHeroData] = useState([] as any[])
 
   // Fetch data fro API when component first mounts
@@ -34,12 +35,14 @@ const HomePage: React.FC<IPage & RouteComponentProps<any>> = props => {
         return (
           <Link className="heroLink" key={hero.id} to={`/${hero.id}`}>
             <div className="box">
-              <div className="boxImg">
-                <img src={hero.images.sm} alt="hero" />
-              </div>
+              <div
+                style={{ backgroundImage: `url(${hero.images.sm})` }}
+                className="boxImg"
+              ></div>
               <div className="boxName">
-                <h3>{hero.name}</h3>
-                <h4>{hero.work.occupation}</h4>
+                <h3 className="listName">{hero.name}</h3>
+                <h4 className="listName">{hero.work.occupation}</h4>
+                <p className="details">Learn more</p>
               </div>
             </div>
           </Link>
